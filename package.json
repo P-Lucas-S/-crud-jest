@@ -3,13 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest && start test-report.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^4.0.1"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      ["jest-html-reporter", {
+        "pageTitle": "Relatório de Testes",
+        "outputPath": "test-report.html",
+        "includeFailureMsg": true,
+        "includeConsoleLog": true
+      }]
+    ]
   }
 }
