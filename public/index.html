@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,42 +10,49 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+
         h1 {
             color: #333;
         }
+
         form {
             margin-bottom: 20px;
         }
-        input, button {
+
+        input,
+        button {
             padding: 10px;
             margin: 5px;
             font-size: 16px;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
+
         th {
             background-color: #f4f4f4;
         }
     </style>
 </head>
+
 <body>
     <h1>CRUD com Jest e Express</h1>
 
     <form id="addItemForm">
-        <input type="number" id="itemId" placeholder="ID" required>
         <input type="text" id="itemName" placeholder="Nome" required>
         <input type="number" id="itemPrice" placeholder="Preço" required>
         <button type="submit">Adicionar Item</button>
     </form>
-
     <table id="itemsTable">
         <thead>
             <tr>
@@ -81,7 +89,6 @@
         document.getElementById('addItemForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const item = {
-                id: parseInt(document.getElementById('itemId').value),
                 name: document.getElementById('itemName').value,
                 price: parseFloat(document.getElementById('itemPrice').value)
             };
@@ -114,4 +121,5 @@
         loadItems();
     </script>
 </body>
+
 </html>

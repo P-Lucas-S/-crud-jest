@@ -1,11 +1,13 @@
 let items = [];
+let nextId = 1; // Variável para gerar IDs automaticamente
 
 function createItem(item) {
     if (!item.name || !item.price) {
         throw new Error("Item must have a name and price");
     }
-    items.push(item);
-    return item;
+    const newItem = { id: nextId++, ...item }; // Gera o ID automaticamente
+    items.push(newItem);
+    return newItem;
 }
 
 function getAllItems() {
